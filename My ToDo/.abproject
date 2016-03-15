@@ -1,0 +1,45 @@
+{
+  "ProjectName": "My ToDo",
+  "ProjectGuid": "467b49ef-c6db-41c4-8a25-ba91443038dc",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.MyToDo",
+  "DisplayName": "My ToDo",
+  "Author": "",
+  "Description": "My ToDo",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{baa3bb4e-636a-45f4-80c1-b8a2a6debc87}",
+  "WP8ProductID": "{9fe2217f-8167-42f5-8ed6-aa992ba55223}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.MyToDo",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
