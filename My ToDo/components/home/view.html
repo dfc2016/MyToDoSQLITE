@@ -1,7 +1,33 @@
-<div data-role="view" data-title="Home View" data-layout="main" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow">
+<div id="startModel" data-role="view" data-title="Start ToDo" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow">
 
     <!-- START_CUSTOM_CODE_home -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+    <h2>Bootstrap ON</h2>
+    <h4>Start ToDo</h4>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-5">
+                <h4>user:</h4>
+            </div>
+            <div class="col-xs-7">
+                <h4 data-bind="html: startModel.fields.user"></h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-5">
+                <h4>password:</h4>
+            </div>
+            <div class="col-xs-7">
+                <h4 data-bind="html: startModel.fields.password"></h4>
+            </div>
+        </div>
+        <div class="btn-group-vertical btn-group-lg" style="width:100%;">
+            <button type="button" class="btn btn-sm btn-success" data-bind="events: { click: startModel.getUsrPwd }">
+                Get User
+            </button>
+        </div>
+    </div>
+    
 
     <!-- END_CUSTOM_CODE_home -->
 </div>

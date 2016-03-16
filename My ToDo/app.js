@@ -1,26 +1,50 @@
 'use strict';
 
-(function() {
+(function () {
     var app = {
         data: {}
     };
+    //DFC 20160316 insert code here to handle WebSQL/sqlite
+    app.db = null;
 
-    var bootstrap = function() {
-        $(function() {
+    var bootstrap = function () {
+        //DFC 20160316 init dbengine WebSQL/sqlite
+        var dbName = "Todo.sqlite";
+        if (window.navigator.simulator === true) {
+            // For debugin in simulator fallback to native SQL Lite
+            console.log("Use built in SQL Lite");
+            app.db = window.openDatabase(dbName, "1.0", "Cordova Demo", 200000);
+        } else {
+            app.db = window.sqlitePlugin.openDatabase(dbName);
+        }
+        app.db.transaction(
+            function(tx){
+                tx.executeSql(
+                    "DROP TABLE IF EXISTS users"
+                );
+                tx.executeSql(
+                    "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY ASC, user TEXT, password TEXT)"
+                );
+                tx.executeSql(
+                    "INSERT INTO users (user, password) VALUES ('diego', 'secure123')"
+                );
+            }
+        );
+        //DFC 20160316 init dbengine WebSQL/sqlite
+        
+        $(function () {
             app.mobileApp = new kendo.mobile.Application(document.body, {
                 transition: 'slide',
-                skin: 'flat',
                 initial: 'components/home/view.html'
             });
         });
     };
 
     if (window.cordova) {
-        document.addEventListener('deviceready', function() {
+        document.addEventListener('deviceready', function () {
             if (navigator && navigator.splashscreen) {
                 navigator.splashscreen.hide();
             }
-
             bootstrap();
         }, false);
     } else {
@@ -35,7 +59,7 @@
 
     window.app = app;
 
-    app.isOnline = function() {
+    app.isOnline = function () {
         if (!navigator || !navigator.connection) {
             return true;
         } else {
