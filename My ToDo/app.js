@@ -6,16 +6,19 @@
     };
     //DFC 20160316 insert code here to handle WebSQL/sqlite
     app.db = null;
+    app.dbEngine = "";
 
     var bootstrap = function () {
         //DFC 20160316 init dbengine WebSQL/sqlite
         var dbName = "Todo.sqlite";
         if (window.navigator.simulator === true) {
             // For debugin in simulator fallback to native SQL Lite
-            console.log("Use built in SQL Lite");
+            console.log("Use built in SQL Lite");            
+            app.dbEngine = "SQL built in";
             app.db = window.openDatabase(dbName, "1.0", "Cordova Demo", 200000);
         } else {
             app.db = window.sqlitePlugin.openDatabase(dbName);
+            app.dbEngine = "Native SQLite";
         }
         app.db.transaction(
             function(tx){

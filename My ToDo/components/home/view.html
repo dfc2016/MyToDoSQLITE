@@ -1,9 +1,23 @@
 <div id="startModel" data-role="view" data-title="Start ToDo" data-layout="main-nonav" data-model="app.home" data-show="app.home.onShow" data-after-show="app.home.afterShow">
-
     <!-- START_CUSTOM_CODE_home -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-    <h2>Bootstrap ON</h2>
-    <h4>Start ToDo</h4>
+    <h2>Start ToDo</h2>
+    <form role="form">
+        <div class="form-group">
+            <h4>
+                <!-- use type="email" for input tag to uniform the style  -->
+                <input data-bind="value: startModel.fields.StartUser" placeholder="ingresar usuario" type="email" class="form-control" id="usr">
+            </h4>
+            <h4>
+                <input data-bind="value: startModel.fields.StartPassword" placeholder="ingresar password" type="password" class="form-control" id="pwd">
+            </h4>
+        </div>
+        <div class="btn-group-vertical btn-group-lg" style="width:100%;">
+            <button type="button" class="btn btn-sm btn-success" data-bind="events: { click: startModel.LogIn }">
+                Ingresa
+            </button>
+        </div>
+    </form>
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-5">
@@ -26,8 +40,14 @@
                 Get User
             </button>
         </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <h4>SQL engine: </h4>
+            </div>
+            <div class="col-xs-6">
+                <h4 id="sqlengine"></h4>
+            </div>
+        </div>
     </div>
-    
-
     <!-- END_CUSTOM_CODE_home -->
 </div>
