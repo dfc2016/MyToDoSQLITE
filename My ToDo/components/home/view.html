@@ -6,16 +6,22 @@
         <div class="form-group">
             <h4>
                 <!-- use type="email" for input tag to uniform the style  -->
-                <input data-bind="value: startModel.fields.StartUser" placeholder="ingresar usuario" type="email" class="form-control" id="usr">
+                <input data-bind="value: startModel.fields.StartUser" placeholder="ingresar aqui usuario" type="email" class="form-control" id="usr">
             </h4>
             <h4>
-                <input data-bind="value: startModel.fields.StartPassword" placeholder="ingresar password" type="password" class="form-control" id="pwd">
+                <input data-bind="value: startModel.fields.StartPassword" placeholder="ingresar aqui password" type="password" class="form-control" id="pwd">
             </h4>
         </div>
         <div class="btn-group-vertical btn-group-lg" style="width:100%;">
             <button type="button" class="btn btn-sm btn-success" data-bind="events: { click: startModel.LogIn }">
-                Ingresa
+                INICIAR
             </button>
+        </div>
+        <div>&nbsp;</div>
+        <div data-bind="visible: startModel.registrar.isVisible" class="btn-group-vertical btn-group-lg" style="width:100%;">
+            <button type="button" class="btn btn-sm btn-info">
+                REGISTRATE
+            </button>                
         </div>
     </form>
     <div class="container-fluid">
